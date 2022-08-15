@@ -1,0 +1,57 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <title>Calculator</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Calculator</a>
+                   
+        </div>
+      </nav>
+      <br>
+      <div class='container-fluid'>
+        <div class='row'>
+            <div class='col-md-3'></div>
+            <div class='col-md-6'>
+                <div class='card card-body'>
+                    <form method='POST' action=''>
+                        {% csrf_token %}
+
+                        <input type='text' class='form-control' name='a', placeholder='Enter first number...' required>
+                        <br>
+                        <input type='text' class='form-control' name='b', placeholder='Enter second number...' required>
+                        <br>
+                        <input type='text' class='form-control' name='operation', placeholder='Operation Supported: add/subtract/divide/multiply...' required>
+                        <br>
+                        <button type='submit' class='btn btn-success'>Calculate</button>
+
+                    </form> 
+
+                </div>
+                <br>
+                <div class='card card-body'>
+                    {{result}}
+                </div>
+            </div>
+            
+            <div class='col-md-3'></div>
+        </div>
+
+
+      </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  
+  </body>
+</html>
